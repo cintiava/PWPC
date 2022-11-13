@@ -1,16 +1,22 @@
-// Creando los Action Methods 
+// Creando los Actions Methods
 // GET "/"
-//GET "/index"
+// GET "/index"
 const home = (req, res) => {
-    // 1. Generando view-model 
-    let viewModel = {
+    // 1. Generando el view-model
+    const viewModel = {
         title: 'Express',
-        author: 'Vanesa Riaño'
+        author: 'Vanesa Riaño',
     };
 
-    // 2. Mandamos a generar la vista con el Template Engine
-    res.render('home. viewModel');
+    res.render('home/home', viewModel);
+
 };
 
-// Exportando el Controlador 
-export default { home };
+// 2. Madamos a generar la vista con el Template Engine
+const about = (req, res) => {
+    res.render('home/about', {});
+};
+
+// Exportando el Controlador
+export default { home, about }
+

@@ -3,36 +3,23 @@
 
 // Importar un administrador de rutas de archivos
 const path = require('path');
-
 // Importando el extractor de css
 const MiniCssExtractPlugin =
   require('mini-css-extract-plugin');
 
-// Importando Eslint para webpack
-const ESlintPlugin = require('eslint-webpack-plugin')
-
 // Exportamos un objeto de configuración
 // que sera usado por webpack
 module.exports = {
+  // 0. Estableciendo el modo produccion
+  mode: 'production',
   // 1. El archivo de entrada o indexador
   entry: "./client/index.js",
   // 2. Especificar el archivo de salida
   output: {
-    // 2.1 Ruta fuente de archivos publicos
+    // 2.1 Ruta absoluta de salida
     path: path.resolve(__dirname, "public"),
     // 2.2 Nombre del archivo de salida
-    filename: "bundle.js",
-    // 2.3 Agreando la ruta publica de servicio
-    publicPath: '/'
-  },
-  // 3. Configurando el servidor de desarrollo
-  devServer: {
-    // 3.1 Folder de archivos estáticos
-    static: path.join(__dirname, "public"),
-    // 3.2 Puerto del servidor de desarrollo
-    port: 3000,
-    // 3.3 Definiendo el host
-    host: "localhost"
+    filename: "bundle.js"
   },
   // Agregando un modulo a webpack
   module: {
@@ -50,7 +37,8 @@ module.exports = {
                   {
                     'modules': false,
                     'useBuiltIns': 'usage',
-                    'targets': {"chrome": 80},
+                    // '> 0.25%, not dead'
+                    'targets': { "chrome": 80 },
                     'corejs': 3
                   }
                 ]
@@ -61,7 +49,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader,'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
   },
@@ -69,7 +57,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'stylesheets/app.css'
-    }),
-    new ESlintPlugin()
+    })
   ]
 }

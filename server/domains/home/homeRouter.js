@@ -1,13 +1,18 @@
-// Importando el Router de Express 
+// Importando el Router de Express
 import { Router } from 'express';
-// Importando e controlador 
+// Importando el controlador
 import homeController from './homeController';
-// Creando instancia del enrutador 
+// Creando una isntancia del enrutador
 const router = new Router();
 
-//Enrutamos 
+// Enrutamos
 // GET '/'
+// GET '/home'
+// GET '/index
 router.get(['/', '/home', '/index'], homeController.home);
 
-// Exporto el tramo de ruta 
+//GET about 
+router.get(['/about'], homeController.about);
+
+// Exporto este tramo de ruta
 export default router;
