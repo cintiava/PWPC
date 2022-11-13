@@ -38,7 +38,7 @@ module.exports = {
                     'modules': false,
                     'useBuiltIns': 'usage',
                     // '> 0.25%, not dead'
-                    'targets': {"chrome": 80},
+                    'targets': { "chrome": 80 },
                     'corejs': 3
                   }
                 ]
@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader,'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
   },
