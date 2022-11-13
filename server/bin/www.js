@@ -91,7 +91,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-    // Desestrecuturando port de addr
-    let {port} = addr
+  // Desestrecuturando port de addr
+  let { port } = addr
   debug(`🎈 Listening on http://localhost:${port}`);
 }
