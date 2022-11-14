@@ -1,3 +1,5 @@
+// Cargando las ariables de entorno 
+import configKeys from '../../config/config.Keys';
 // Creando los Actions Methods
 // GET "/"
 // GET "/index"
@@ -16,7 +18,7 @@ const home = (req, res) => {
 //GET"/about"
 const about = (req, res) => {
     const viewModel = {
-        appVersion: '0.0.0',
+        appVersion: configKeys.appVersion,
     };
     res.render('home/about', viewModel);
 };
