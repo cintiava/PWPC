@@ -16,6 +16,7 @@ const defaultConfig = {
 const devConfig = {
     nodeEnv: 'development',
     mongoUrl: 'local Url',
+    debug: process.env.DEBUG,
 };
 
 //Configuracion para produccion 
@@ -36,3 +37,9 @@ function envConfig(env) {
             return prodConfig;
     }
 }
+
+//Exportar la configuracion 
+export default {
+    ...defaultConfig,
+    ...envConfig(process.env.NODE_ENV),
+};

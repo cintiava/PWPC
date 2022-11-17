@@ -13,6 +13,7 @@ import cookieParser from 'cookie-parser';
 // Registrador de eventos HTTP
 import morgan from 'morgan';
 
+
 // Importando Webbpack middleware
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
