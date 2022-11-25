@@ -9,7 +9,7 @@
 import app from "../app"
 import debug from '../services/debugLogger'
 import http from 'http';
-import configKeys from "../config/config.Keys";
+import configKeys from "../config/configKeys";
 
 /**
  * Get port from environment and store in Express.
